@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Shopify Challenge</string>
+    <string name="app_name">Shopricruit</string>
+    <string name="base_url">https://shopicruit.myshopify.com/admin/</string>
 </resources>
