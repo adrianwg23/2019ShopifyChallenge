@@ -1,5 +1,7 @@
 package com.example.adrianwong.shopifychallenge.repository
 
-class CollectionListRepositoryImpl {
+import com.example.adrianwong.shopifychallenge.api.ShopifyApiService
+
+class CollectionListRepositoryImpl(private val shopifyApiService: ShopifyApiService) {
 
 }
