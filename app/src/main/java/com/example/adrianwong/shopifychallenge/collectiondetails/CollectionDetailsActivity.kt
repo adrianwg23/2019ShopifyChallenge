@@ -67,6 +67,11 @@ class CollectionDetailsActivity : AppCompatActivity(), ICollectionDetails.View {
         }
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        (application as ShopricruitApplication).releaseCollectionDetailsSubComponent()
+    }
+
     override fun setupAdapter() {
         contentDetailsRecyclerView.adapter = collectionDetailsAdapter
     }
