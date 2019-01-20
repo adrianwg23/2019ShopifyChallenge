@@ -42,6 +42,7 @@
                 android:id="@+id/collectionDetailsTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_condensed_regular"
                 android:textColor="@android:color/black"
                 tools:text="title" />
 
@@ -49,6 +50,7 @@
                 android:id="@+id/collectionDetailsBody"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light_italic"
                 tools:text="body" />
 
         </LinearLayout>
