@@ -12,7 +12,7 @@ import javax.inject.Inject
 class CollectionDetailsRepositoryImpl @Inject constructor(private val shopifyApiService: ShopifyApiService)
     : ICollectionDetailsRepository {
 
-    override suspend fun getCollectionDetails(page: Int): Result<Exception, List<CollectionDetails>> {
+    override suspend fun getCollectionDetails(collectionId: Int, page: Int): Result<Exception, List<CollectionDetails>> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 

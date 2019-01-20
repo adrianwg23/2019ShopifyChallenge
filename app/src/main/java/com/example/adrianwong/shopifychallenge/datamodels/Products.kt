@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class ProductsResult(
     @SerializedName("products")
-    var products: List<Products>? = null
+    var products: List<Products>
 )
 
 data class Products(

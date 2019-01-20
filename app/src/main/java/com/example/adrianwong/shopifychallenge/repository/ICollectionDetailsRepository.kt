@@ -6,6 +6,6 @@ import com.example.adrianwong.shopifychallenge.datamodels.Result
 import java.lang.Exception
 
 interface ICollectionDetailsRepository {
-    suspend fun getCollectionDetails(page: Int): Result<Exception, List<CollectionDetails>>
+    suspend fun getCollectionDetails(collectionId: Int, page: Int): Result<Exception, List<CollectionDetails>>
     suspend fun getProducts(ids: String, page: Int): Result<Exception, List<Products>>
 }

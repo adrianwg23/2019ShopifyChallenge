@@ -1,6 +1,8 @@
 package com.example.adrianwong.shopifychallenge
 
 import android.app.Application
+import com.example.adrianwong.shopifychallenge.collectiondetails.CollectionDetailsActivity
+import com.example.adrianwong.shopifychallenge.collectionlist.CollectionListActivity
 import com.example.adrianwong.shopifychallenge.dagger.DaggerMainComponent
 import com.example.adrianwong.shopifychallenge.dagger.MainComponent
 import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.CollectionDetailsModule
@@ -27,8 +29,8 @@ class ShopricruitApplication : Application() {
             .build()
     }
 
-    fun createCollectionListSubComponent(): CollectionListSubComponent {
-        collectionListSubComponent = mainComponent.plus(CollectionListModule())
+    fun createCollectionListSubComponent(collectionListActivity: CollectionListActivity): CollectionListSubComponent {
+        collectionListSubComponent = mainComponent.plus(CollectionListModule(collectionListActivity))
         return collectionListSubComponent!!
     }
 
@@ -36,8 +38,8 @@ class ShopricruitApplication : Application() {
         collectionListSubComponent = null
     }
 
-    fun createCollectionDetailsSubComponent(): CollectionDetailsSubComponent {
-        collectionDetailsSubComponent = mainComponent.plus(CollectionDetailsModule())
+    fun createCollectionDetailsSubComponent(collectionDetailsActivity: CollectionDetailsActivity): CollectionDetailsSubComponent {
+        collectionDetailsSubComponent = mainComponent.plus(CollectionDetailsModule(collectionDetailsActivity))
         return collectionDetailsSubComponent!!
     }
 

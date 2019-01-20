@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class CustomCollections(
     @SerializedName("custom_collections")
-    var customCollections: List<CustomCollection>? = null
+    var customCollections: List<CustomCollection>
 )
 
 data class CustomCollection(
