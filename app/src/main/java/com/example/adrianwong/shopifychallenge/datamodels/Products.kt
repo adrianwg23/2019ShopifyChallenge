@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName
 
 data class ProductsResult(
     @SerializedName("products")
-    var products: List<Products>
+    var products: List<Product>
 )
 
-data class Products(
+data class Product(
 
     @SerializedName("id")
     var id: Long = -1,

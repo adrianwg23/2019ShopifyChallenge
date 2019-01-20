@@ -1,5 +1,6 @@
 package com.example.adrianwong.shopifychallenge.collectionlist
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.adrianwong.shopifychallenge.R
 import com.example.adrianwong.shopifychallenge.ShopricruitApplication
+import com.example.adrianwong.shopifychallenge.collectiondetails.CollectionDetailsActivity
 import com.example.adrianwong.shopifychallenge.datamodels.CustomCollection
 import com.example.adrianwong.shopifychallenge.datamodels.Result
 import com.example.adrianwong.shopifychallenge.util.makeToast
@@ -38,14 +40,19 @@ class CollectionListActivity : AppCompatActivity(), ICollectionList.View {
             it?.let { result ->
                 when (result) {
                     is Result.Value -> {
-                        collectionListAdapter.submitList(collectionListViewModel.collectionList)
+                        collectionListAdapter.submitList(result.value)
                         hideLoadingView()
                     }
-                    is Result.Error -> makeToast("Failed to fetch data")
+                    is Result.Error -> makeToast(getString(R.string.network_error))
                 }
             }
         })
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        (application as ShopricruitApplication).releaseCollectionListSubComponent()
     }
 
     override fun setupAdapter() {
@@ -57,11 +64,11 @@ class CollectionListActivity : AppCompatActivity(), ICollectionList.View {
     }
 
     override fun showLoadingView() {
-        contentListProgressBar.visibility = View.VISIBLE
+        collectionListProgressBar.visibility = View.VISIBLE
     }
 
     override fun hideLoadingView() {
-        contentListProgressBar.visibility = View.GONE
+        collectionListProgressBar.visibility = View.GONE
     }
 
     override fun setToolbarTitle() {
@@ -69,5 +76,12 @@ class CollectionListActivity : AppCompatActivity(), ICollectionList.View {
     }
 
     override fun startCollectionDetailsActivity(customCollection: CustomCollection) {
+        val intent = Intent(this, CollectionDetailsActivity::class.java)
+        intent.putExtra(COLLECTION_EXTRA, customCollection)
+        startActivity(intent)
+    }
+
+    companion object {
+        const val COLLECTION_EXTRA = "collection_extra"
     }
 }

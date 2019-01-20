@@ -1,6 +1,7 @@
 package com.example.adrianwong.shopifychallenge.datamodels
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class CustomCollections(
     @SerializedName("custom_collections")
@@ -23,9 +24,9 @@ data class CustomCollection(
 
     @SerializedName("image")
     var image: CustomCollectionImage? = null
-)
+) : Serializable
 
 data class CustomCollectionImage(
     @SerializedName("src")
     var src: String? = null
-)
+) : Serializable

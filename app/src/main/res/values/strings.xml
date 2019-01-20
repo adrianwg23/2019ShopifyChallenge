@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Shopricruit</string>
-    <string name="collection_list">CollectionList</string>
+    <string name="collection_list">Collection List</string>
+    <string name="collection_detail">Collection Detail</string>
+    <string name="missing_description">No description available</string>
+    <string name="network_error">Failed to fetch data</string>
+
+    <!-- network -->
     <string name="base_url">https://shopicruit.myshopify.com/admin/</string>
 </resources>
