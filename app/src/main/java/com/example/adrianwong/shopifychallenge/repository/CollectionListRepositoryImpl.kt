@@ -1,7 +1,11 @@
 package com.example.adrianwong.shopifychallenge.repository
 
 import com.example.adrianwong.shopifychallenge.api.ShopifyApiService
+import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListScope
+import javax.inject.Inject
 
-class CollectionListRepositoryImpl(private val shopifyApiService: ShopifyApiService) {
+@CollectionListScope
+class CollectionListRepositoryImpl @Inject constructor(private val shopifyApiService: ShopifyApiService)
+    : ICollectionListRepository {
 
 }
