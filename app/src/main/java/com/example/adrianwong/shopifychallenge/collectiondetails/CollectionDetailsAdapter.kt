@@ -28,6 +28,7 @@ class CollectionDetailsAdapter @Inject constructor(private val collectionDetails
 
 
     inner class CollectionDetailsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         fun bind(product: Product) {
             itemView.productTitle.text = product.title
             itemView.productBody.text = product.bodyHtml

@@ -13,5 +13,7 @@ interface ICollectionDetails {
     }
 
     interface ViewModel {
+        fun onStart()
+        fun getProducts(customCollection: CustomCollection)
     }
 }

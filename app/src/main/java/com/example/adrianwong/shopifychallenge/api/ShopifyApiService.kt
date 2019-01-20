@@ -14,9 +14,9 @@ interface ShopifyApiService {
                              @Query("access_token") accessToken: String): Deferred<CustomCollections>
 
     @GET("collects.json")
-    fun getCollectionDetails(@Query("collection_id") collectionId: Int,
-                             @Query("page") page: Int,
-                             @Query("access_token") accessToken: String): Deferred<Collects>
+    fun getCollects(@Query("collection_id") collectionId: Long,
+                    @Query("page") page: Int,
+                    @Query("access_token") accessToken: String): Deferred<Collects>
 
     @GET("products.json")
     fun getProducts(@Query("ids") ids: String,

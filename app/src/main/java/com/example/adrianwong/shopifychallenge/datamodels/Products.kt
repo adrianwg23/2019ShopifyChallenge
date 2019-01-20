@@ -58,6 +58,6 @@ data class Options(
 )
 
 data class ProductImage(
-    @SerializedName("image")
+    @SerializedName("src")
     var src: String? = null
 )

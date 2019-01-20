@@ -29,6 +29,7 @@ class CollectionListAdapter @Inject constructor(private val collectionListActivi
     }
 
     inner class CustomCollectionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
         fun bind(customCollection: CustomCollection) {
             itemView.customCollectionTitle.text = customCollection.title
 
