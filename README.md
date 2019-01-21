@@ -11,7 +11,7 @@ Built using:
 
 
 ## Screenshots
------------------------
+
 ### Collection List
 <img src="Screenshots/Collection%20List%20Screen.png" height="500" >
 
