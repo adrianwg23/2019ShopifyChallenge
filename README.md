@@ -13,4 +13,4 @@ Built using:
 ## Screenshots
 -----------------------
 <img src="Screenshots/Collection%20List%20Screen.png" height="500" >
-<img src="Screenshots/Collection%20Details%20Screen.png" height="500 >
+<img src="Screenshots/Collection%20Details%20Screen.png" height="500" >
