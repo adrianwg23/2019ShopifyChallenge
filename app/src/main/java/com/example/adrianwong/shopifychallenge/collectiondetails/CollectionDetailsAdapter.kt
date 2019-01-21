@@ -32,6 +32,7 @@ class CollectionDetailsAdapter @Inject constructor(private val collectionDetails
         fun bind(product: Product) {
             itemView.productTitle.text = product.title
             itemView.productBody.text = product.bodyHtml
+            itemView.productVariants.text = "Variants: ${product.variants?.size}"
 
             val inventory = product.variants?.sumBy { it.inventoryQuantity }
             itemView.productInventory.text = "Inventory: $inventory"
