@@ -5,11 +5,7 @@ import com.example.adrianwong.shopifychallenge.collectiondetails.CollectionDetai
 import com.example.adrianwong.shopifychallenge.collectionlist.CollectionListActivity
 import com.example.adrianwong.shopifychallenge.dagger.DaggerMainComponent
 import com.example.adrianwong.shopifychallenge.dagger.MainComponent
-import com.example.adrianwong.shopifychallenge.dagger.application.AppModule
-import com.example.adrianwong.shopifychallenge.dagger.application.NetworkModule
-import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.CollectionDetailsModule
 import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.CollectionDetailsSubComponent
-import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListModule
 import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListSubComponent
 
 class ShopricruitApplication : Application() {
@@ -22,13 +18,16 @@ class ShopricruitApplication : Application() {
         super.onCreate()
 
         mainComponent = DaggerMainComponent.builder()
-            .appModule(AppModule(applicationContext))
-            .networkModule(NetworkModule(getString(R.string.base_url)))
+            .applicationContext(applicationContext)
+            .baseUrl(getString(R.string.base_url))
             .build()
     }
 
     fun createCollectionListSubComponent(collectionListActivity: CollectionListActivity): CollectionListSubComponent {
-        collectionListSubComponent = mainComponent.plus(CollectionListModule(collectionListActivity))
+        collectionListSubComponent = mainComponent
+            .createCollectionListSubcomponentBuilder()
+            .activity(collectionListActivity)
+            .build()
         return collectionListSubComponent!!
     }
 
@@ -37,7 +36,10 @@ class ShopricruitApplication : Application() {
     }
 
     fun createCollectionDetailsSubComponent(collectionDetailsActivity: CollectionDetailsActivity): CollectionDetailsSubComponent {
-        collectionDetailsSubComponent = mainComponent.plus(CollectionDetailsModule(collectionDetailsActivity))
+        collectionDetailsSubComponent = mainComponent
+            .createCollectionDetailsSubcomponentBuilder()
+            .activity(collectionDetailsActivity)
+            .build()
         return collectionDetailsSubComponent!!
     }
 

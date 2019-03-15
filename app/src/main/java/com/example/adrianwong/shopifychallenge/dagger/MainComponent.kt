@@ -1,18 +1,29 @@
 package com.example.adrianwong.shopifychallenge.dagger
 
-import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.CollectionDetailsModule
-import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.CollectionDetailsSubComponent
-import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListModule
-import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListSubComponent
+import android.content.Context
 import com.example.adrianwong.shopifychallenge.dagger.application.AppModule
 import com.example.adrianwong.shopifychallenge.dagger.application.ApplicationScope
 import com.example.adrianwong.shopifychallenge.dagger.application.DataModule
 import com.example.adrianwong.shopifychallenge.dagger.application.NetworkModule
+import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.CollectionDetailsSubComponent
+import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListSubComponent
+import dagger.BindsInstance
 import dagger.Component
 
 @ApplicationScope
 @Component(modules = [AppModule::class, DataModule::class, NetworkModule::class])
 interface MainComponent {
-    fun plus(collectionListModule: CollectionListModule): CollectionListSubComponent
-    fun plus(collectionDetailsModule: CollectionDetailsModule): CollectionDetailsSubComponent
+    fun createCollectionListSubcomponentBuilder(): CollectionListSubComponent.Builder
+    fun createCollectionDetailsSubcomponentBuilder(): CollectionDetailsSubComponent.Builder
+
+    @Component.Builder
+    interface Builder {
+        fun build(): MainComponent
+
+        @BindsInstance
+        fun applicationContext(applicationContext: Context): Builder
+
+        @BindsInstance
+        fun baseUrl(baseUrl: String): Builder
+    }
 }

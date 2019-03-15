@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 @Module
-class NetworkModule(private val baseUrl: String) {
+class NetworkModule {
 
     @Provides
     @ApplicationScope
@@ -33,7 +33,7 @@ class NetworkModule(private val baseUrl: String) {
 
     @Provides
     @ApplicationScope
-    fun providesRetrofit(okHttpClient: OkHttpClient) : Retrofit {
+    fun providesRetrofit(okHttpClient: OkHttpClient, baseUrl: String) : Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(baseUrl)
