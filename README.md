@@ -11,6 +11,9 @@ Built using:
 
 
 ## Screenshots
------------------------
-![collection list screen](https://user-images.githubusercontent.com/25408756/51458329-cf912400-1d22-11e9-83ee-2031aab7c0f2.png)![collection details screen](https://user-images.githubusercontent.com/25408756/51458360-ec2d5c00-1d22-11e9-9fad-f42c2a89c3bb.png)
 
+### Collection List
+<img src="Screenshots/Collection%20List%20Screen.png" height="500" >
+
+### Collection Details
+<img src="Screenshots/Collection%20Details%20Screen.png" height="500" >
