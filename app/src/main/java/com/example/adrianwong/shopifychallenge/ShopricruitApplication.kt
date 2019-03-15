@@ -5,13 +5,12 @@ import com.example.adrianwong.shopifychallenge.collectiondetails.CollectionDetai
 import com.example.adrianwong.shopifychallenge.collectionlist.CollectionListActivity
 import com.example.adrianwong.shopifychallenge.dagger.DaggerMainComponent
 import com.example.adrianwong.shopifychallenge.dagger.MainComponent
+import com.example.adrianwong.shopifychallenge.dagger.application.AppModule
+import com.example.adrianwong.shopifychallenge.dagger.application.NetworkModule
 import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.CollectionDetailsModule
 import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.CollectionDetailsSubComponent
 import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListModule
 import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListSubComponent
-import com.example.adrianwong.shopifychallenge.dagger.application.AppModule
-import com.example.adrianwong.shopifychallenge.dagger.application.DataModule
-import com.example.adrianwong.shopifychallenge.dagger.application.NetworkModule
 
 class ShopricruitApplication : Application() {
 
@@ -24,7 +23,6 @@ class ShopricruitApplication : Application() {
 
         mainComponent = DaggerMainComponent.builder()
             .appModule(AppModule(applicationContext))
-            .dataModule(DataModule())
             .networkModule(NetworkModule(getString(R.string.base_url)))
             .build()
     }
