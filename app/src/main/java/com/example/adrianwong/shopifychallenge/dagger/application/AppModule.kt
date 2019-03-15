@@ -1,7 +1,6 @@
-package com.example.adrianwong.shopifychallenge.dagger.modules
+package com.example.adrianwong.shopifychallenge.dagger.application
 
 import android.content.Context
-import com.example.adrianwong.shopifychallenge.dagger.ApplicationScope
 import dagger.Module
 import dagger.Provides
 

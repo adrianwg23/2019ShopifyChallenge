@@ -9,9 +9,9 @@ import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.Collecti
 import com.example.adrianwong.shopifychallenge.dagger.collectiondetails.CollectionDetailsSubComponent
 import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListModule
 import com.example.adrianwong.shopifychallenge.dagger.collectionlist.CollectionListSubComponent
-import com.example.adrianwong.shopifychallenge.dagger.modules.AppModule
-import com.example.adrianwong.shopifychallenge.dagger.modules.DataModule
-import com.example.adrianwong.shopifychallenge.dagger.modules.NetworkModule
+import com.example.adrianwong.shopifychallenge.dagger.application.AppModule
+import com.example.adrianwong.shopifychallenge.dagger.application.DataModule
+import com.example.adrianwong.shopifychallenge.dagger.application.NetworkModule
 
 class ShopricruitApplication : Application() {
 

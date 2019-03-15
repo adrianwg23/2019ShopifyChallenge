@@ -1,7 +1,6 @@
-package com.example.adrianwong.shopifychallenge.dagger.modules
+package com.example.adrianwong.shopifychallenge.dagger.application
 
 import com.example.adrianwong.shopifychallenge.api.ShopifyApiService
-import com.example.adrianwong.shopifychallenge.dagger.ApplicationScope
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides

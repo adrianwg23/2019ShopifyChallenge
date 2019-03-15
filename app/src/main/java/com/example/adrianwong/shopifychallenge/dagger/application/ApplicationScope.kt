@@ -1,4 +1,4 @@
-package com.example.adrianwong.shopifychallenge.dagger
+package com.example.adrianwong.shopifychallenge.dagger.application
 
 import javax.inject.Scope
 
