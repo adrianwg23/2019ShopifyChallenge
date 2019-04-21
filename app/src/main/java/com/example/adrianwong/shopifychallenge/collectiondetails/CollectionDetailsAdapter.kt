@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.collection_details_item.view.*
 import javax.inject.Inject
 
 @CollectionDetailsScope
-class CollectionDetailsAdapter @Inject constructor(private val collectionDetailsActivity: CollectionDetailsActivity) :
+class CollectionDetailsAdapter @Inject constructor() :
     ListAdapter<Product, CollectionDetailsAdapter.CollectionDetailsViewHolder>(CollectionDetailsDiffUtilCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CollectionDetailsViewHolder {
@@ -37,7 +37,7 @@ class CollectionDetailsAdapter @Inject constructor(private val collectionDetails
             val inventory = product.variants?.sumBy { it.inventoryQuantity }
             itemView.productInventory.text = "Inventory: $inventory"
 
-            Glide.with(collectionDetailsActivity)
+            Glide.with(itemView.context)
                 .load(product.image?.src)
                 .into(itemView.productImage)
         }

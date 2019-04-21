@@ -1,7 +1,6 @@
 package com.example.adrianwong.shopifychallenge.dagger.collectionlist
 
 import com.example.adrianwong.shopifychallenge.collectionlist.CollectionListActivity
-import dagger.BindsInstance
 import dagger.Subcomponent
 
 @CollectionListScope
@@ -12,8 +11,5 @@ interface CollectionListSubComponent {
     @Subcomponent.Builder
     interface Builder {
         fun build(): CollectionListSubComponent
-
-        @BindsInstance
-        fun activity(collectionListActivity: CollectionListActivity): Builder
     }
 }

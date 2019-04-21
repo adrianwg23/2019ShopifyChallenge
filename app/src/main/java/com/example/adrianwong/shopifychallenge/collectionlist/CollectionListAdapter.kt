@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.collection_list_item.view.*
 import javax.inject.Inject
 
 @CollectionListScope
-class CollectionListAdapter @Inject constructor(private val collectionListActivity: CollectionListActivity) :
+class CollectionListAdapter @Inject constructor() :
     ListAdapter<CustomCollection, CollectionListAdapter.CustomCollectionViewHolder>(CollectionListDiffUtilCallback()) {
 
     var onItemClick: ((CustomCollection) -> Unit)? = null
@@ -33,7 +33,7 @@ class CollectionListAdapter @Inject constructor(private val collectionListActivi
         fun bind(customCollection: CustomCollection) {
             itemView.customCollectionTitle.text = customCollection.title
 
-            Glide.with(collectionListActivity)
+            Glide.with(itemView.context)
                 .load(customCollection.image?.src)
                 .into(itemView.customCollectionImage)
 

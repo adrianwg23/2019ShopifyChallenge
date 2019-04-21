@@ -30,7 +30,7 @@ class CollectionDetailsActivity : AppCompatActivity(), ICollectionDetails.View {
 
         val customCollection = intent?.extras?.getSerializable(COLLECTION_EXTRA) as? CustomCollection
 
-        (application as ShopricruitApplication).createCollectionDetailsSubComponent(this).inject(this)
+        (application as ShopricruitApplication).createCollectionDetailsSubComponent().inject(this)
         setupAdapter()
 
         collectionDetailsViewModel = ViewModelProviders.of(this, factory).get(CollectionDetailsViewModel::class.java)

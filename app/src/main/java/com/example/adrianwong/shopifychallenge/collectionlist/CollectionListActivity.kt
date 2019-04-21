@@ -27,7 +27,7 @@ class CollectionListActivity : AppCompatActivity(), ICollectionList.View {
         setContentView(R.layout.activity_collection_list)
         setToolbarTitle()
 
-        (application as ShopricruitApplication).createCollectionListSubComponent(this).inject(this)
+        (application as ShopricruitApplication).createCollectionListSubComponent().inject(this)
         setupAdapter()
 
         collectionListViewModel = ViewModelProviders.of(this, factory).get(CollectionListViewModel::class.java)
